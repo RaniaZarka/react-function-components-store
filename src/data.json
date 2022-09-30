@@ -1,0 +1,49 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Regular Lemonade",
+      "image": "/images/dietlemonade.png",
+      "description": "Fresh lemon, water, sugar",
+      "price": "50 kr"
+    },
+
+    {
+      "id": 2,
+      "title": "Minted Lemonade",
+      "image": "/images/mintedlemonade.png",
+      "description": "Fresh lemon, mint,water, sugar",
+      "price": "60 kr"
+    },
+
+    {
+      "id": 3,
+      "title": "Strawberry Lemonade",
+      "image": "/images/strawberrylemonade.png",
+      "description": "Fresh lemon, fresh strawberries, water, sugar",
+      "price": "80 kr"
+    },
+
+    {
+      "id": 4,
+      "title": "Ginger Lemonade",
+      "image": "/images/gingerlemonade.png",
+      "description": "Fresh lemon,fresh ginger, water, sugar",
+      "price": "70 kr"
+    },
+    {
+      "id": 5,
+      "title": "Diet Lemonade",
+      "image": "/images/dietlemonade.png",
+      "description": "Fresh lemon, water, diet sugar",
+      "price": "60 kr"
+    },
+    {
+      "id": 6,
+      "title": "Frozen Lemonade",
+      "image": "/images/frozenlemonade.png",
+      "description": "Fresh lemon, water, diet sugar",
+      "price": "60 kr"
+    }
+  ]
+}

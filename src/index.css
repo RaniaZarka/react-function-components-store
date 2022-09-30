@@ -30,8 +30,13 @@ header{
   background-color: #203040;
   color: #ffffff;
   display: flex;
-align-items: center;
+align-items:center;
 padding: 0.5rem;
+}
+
+.logo{
+  height: 100%;
+  width: 10%;
 }
 
 header a{
@@ -49,3 +54,98 @@ display: flex;
 justify-content: center;
 align-items: center;
 }
+
+.content{
+  display: flex;
+  flex-wrap:wrap;
+}
+.main{
+  flex: 3 60rem;
+}
+.sidebar{
+   /* flex: 1 20rem; */
+   padding-right: 20rem;
+}
+/*Product list*/
+.products {
+  display: flex;
+  flex-wrap: wrap;
+ 
+  justify-content: center;
+  align-items:flex-start;
+  padding: 0;
+  margin: 1rem;
+  list-style-type: none;
+}
+.product {
+  display: flex;
+  justify-content:space-between;
+  height: 100%;
+  font-size: 60%;
+  margin: 1rem;
+}
+.product img {
+  width: 5rem;
+  height: 7rem;
+}
+.product-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+}
+.product-price div,
+.product-price button {
+  text-align: center;
+  flex: 1;
+  
+}
+
+.price{
+  font-size: 100%;
+}
+
+.button-primary{
+  height: 2rem;
+  width: 2rem;
+  margin: 0.2rem;
+}
+
+/*Index.css*/
+/*Cart*/
+.cart{
+padding: 1re;
+margin: 1rem;
+display: flex;
+}
+.cart-header{
+  border-bottom:.1rem #c0c0c0 solid ;
+}
+.cart-items{
+  padding: 0;
+  width: 100%;
+  list-style-type: none;
+  font-size: 60%;
+}
+
+.cart-items img{
+  
+    width: 2rem;
+    height: 3rem;
+  }
+
+ .cart-items li{
+  display: flex;
+ }
+
+ .cart-items li div{
+  padding: .5rem;
+ }
+
+ .cart-items li div:last-child{
+flex: 0.5;
+ }
+.right{
+  text-align: right;
+}
+
