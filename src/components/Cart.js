@@ -24,14 +24,20 @@ export default class Cart extends Component {
                   </div>
                   <div>
                     <div> {item.title}</div>
-                    <div className="right">{item.price} x item.count </div>
+                    <div className="left">
+                      {item.count} x {item.price} {" kr "}
+                    </div>
                   </div>
                 </li>
               ))}
             </ul>
           </div>
           <div className="cart">
-            <div className="total"></div>
+            <div className="total">
+              <div>
+                Total: {cartItems.reduce((a, c) => a + c.price * c.count, 0)} kr
+              </div>
+            </div>
           </div>
         </div>
       </div>

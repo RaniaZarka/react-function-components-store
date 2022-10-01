@@ -88,6 +88,9 @@ align-items: center;
   width: 5rem;
   height: 7rem;
 }
+.product-description{
+  font-size: 60%;
+}
 .product-price {
   display: flex;
   justify-content: space-between;
@@ -145,7 +148,7 @@ display: flex;
  .cart-items li div:last-child{
 flex: 0.5;
  }
-.right{
-  text-align: right;
+.left{
+  text-align: left;
 }
 

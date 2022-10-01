@@ -17,7 +17,7 @@ export default class Products extends Component {
             <li key={product.id}>
               <div className="product">
                 <div className="product-price">
-                  <div className="price"> {product.price}</div>
+                  <div className="price"> {product.price} kr</div>
                   <div>
                     <button
                       onClick={() => this.props.addToCart(product)}
@@ -34,10 +34,13 @@ export default class Products extends Component {
                     </button>
                   </div>
                 </div>
-                <a href={"#" + product.id}>
+                <div>
                   <img src={product.image} alt={product.title}></img>
-                  <p>{product.title}</p>
-                </a>
+                  <p className="product-description">{product.description}</p>
+                  <a href={"#" + product.id}>
+                    <p>{product.title}</p>
+                  </a>
+                </div>
               </div>
             </li>
           ))}
