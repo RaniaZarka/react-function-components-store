@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Modal from "react-modal";
 
 export default class Products extends Component {
   constructor(props) {
@@ -9,7 +10,16 @@ export default class Products extends Component {
 
     console.log(props);
   }
+
+  openModal = (product) => {
+    this.setState({ product });
+  };
+
+  closeModal = () => {
+    this.setState({ product: null });
+  };
   render() {
+    const { product } = this.state;
     return (
       <div>
         <ul className="products">
@@ -36,15 +46,34 @@ export default class Products extends Component {
                 </div>
                 <div>
                   <img src={product.image} alt={product.title}></img>
-                  <p className="product-description">{product.description}</p>
+
                   <a href={"#" + product.id}>
-                    <p>{product.title}</p>
+                    <p onClick={() => this.openModal(product)}>
+                      {product.title}
+                    </p>
                   </a>
                 </div>
               </div>
             </li>
           ))}
         </ul>
+        {
+          // this is a condition if product exists
+          product && (
+            <Modal isOpen={true} onRequestClose={this.closeModal}>
+              <div>
+                <button className="close-modal" onClick={this.closeModal}>
+                  {" "}
+                  x{" "}
+                </button>
+                <div className="modal-info">
+                  <img src={product.image} alt={product.title}></img>
+                  <div>{product.description}</div>
+                </div>
+              </div>
+            </Modal>
+          )
+        }
       </div>
     );
   }
