@@ -1,3 +1,3 @@
-# React-Redux Lemonade web shop
+# React Lemonade web shop
 
 
