@@ -1,24 +1,20 @@
 import React from "react";
-//import { Counter } from "./features/counter/Counter";
 import "./App.css";
 import data from "./data.json";
 import Products from "./components/Products";
+import Clock from "./components/clock";
 import Cart from "./components/Cart";
+import { useState } from "react";
 
-class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      products: data.products,
-      cartItems: [],
-      // sort:"",
-    };
-  }
+function App() {
+  const { products } = data;
 
-  addToCart = (product) => {
-    const cartItems = this.state.cartItems.slice();
+  const [cartItems, setCartItems] = useState([]);
+
+  const addToCart = (product) => {
+    const cartItem = cartItems.slice();
     let alreadyInCart = false;
-    cartItems.forEach((item) => {
+    cartItem.forEach((item) => {
       if (item.id === product.id) {
         item.count++;
         alreadyInCart = true;
@@ -27,41 +23,37 @@ class App extends React.Component {
     if (!alreadyInCart) {
       cartItems.push({ ...product, count: 1 });
     }
-    this.setState({ cartItems });
+    setCartItems((cartItems) => [...cartItems]);
   };
 
-  removeFromCart = (product) => {
-    const cartItems = this.state.cartItems.slice();
-    this.setState({ cartItems: cartItems.filter((x) => x.id !== product.id) });
+  const removeFromCart = (product) => {
+    const cartItem = cartItems.slice();
+    setCartItems(() => [...cartItem.filter((x) => x.id !== product.id)]);
   };
 
-  render() {
-    return (
-      // <div className="App">
-      //   <header className="App-header">
-      <div className="grid-container">
-        <header>
-          <a href="/"> Lemonade Web Shop</a>
-          {/* <Counter /> */}
-        </header>
-        <main>
-          <div className="content">
-            <div className="main">
-              <Products
-                products={this.state.products}
-                addToCart={this.addToCart}
-                removeFromCart={this.removeFromCart}
-              ></Products>
-            </div>
-            <div className="sidebar">
-              <Cart cartItems={this.state.cartItems} />
-            </div>
+  return (
+    <div className="grid-container">
+      <header>
+        <a href="/"> Lemonade Web Shop</a>
+        <Clock />
+      </header>
+      <main>
+        <div className="content">
+          <div className="main">
+            <Products
+              products={products}
+              addToCart={addToCart}
+              removeFromCart={removeFromCart}
+            ></Products>
           </div>
-        </main>
-        <footer>All right is reserved.</footer>
-      </div>
-    );
-  }
+          <div className="sidebar">
+            <Cart cartItems={cartItems} />
+          </div>
+        </div>
+      </main>
+      <footer></footer>
+    </div>
+  );
 }
 
 export default App;
