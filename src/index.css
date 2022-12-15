@@ -31,7 +31,11 @@ header{
   color: #ffffff;
   display: flex;
 align-items:center;
+justify-content: space-between;
 padding: 0.5rem;
+padding-left: 2rem;
+padding-right: 2rem;
+
 }
 
 .logo{
